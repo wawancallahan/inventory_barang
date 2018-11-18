@@ -37,6 +37,8 @@
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         clearForm()
         txtPassword.UseSystemPasswordChar = True
+
+        Call Koneksi()
     End Sub
 
     Private Sub txtPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPassword.KeyPress
