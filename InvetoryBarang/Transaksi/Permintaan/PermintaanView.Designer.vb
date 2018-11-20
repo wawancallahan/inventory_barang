@@ -28,17 +28,23 @@ Partial Class PermintaanView
         Me.btnSimpan = New System.Windows.Forms.Button()
         Me.btnBatal = New System.Windows.Forms.Button()
         Me.btnKeluar = New System.Windows.Forms.Button()
-        Me.LBItems = New System.Windows.Forms.ListBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtJumlah = New System.Windows.Forms.TextBox()
-        Me.txtCari = New System.Windows.Forms.TextBox()
+        Me.cmbBarang = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cmbSupplier = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtQty = New System.Windows.Forms.TextBox()
+        Me.btnTambah = New System.Windows.Forms.Button()
+        Me.txtNo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dtpTanggal
         '
-        Me.dtpTanggal.Location = New System.Drawing.Point(67, 30)
+        Me.dtpTanggal.Location = New System.Drawing.Point(67, 62)
         Me.dtpTanggal.Name = "dtpTanggal"
         Me.dtpTanggal.Size = New System.Drawing.Size(159, 20)
         Me.dtpTanggal.TabIndex = 0
@@ -46,7 +52,7 @@ Partial Class PermintaanView
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 32)
+        Me.Label1.Location = New System.Drawing.Point(12, 64)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 1
@@ -57,14 +63,15 @@ Partial Class PermintaanView
         Me.dgv.AllowUserToAddRows = False
         Me.dgv.AllowUserToDeleteRows = False
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv.Location = New System.Drawing.Point(12, 75)
+        Me.dgv.Location = New System.Drawing.Point(12, 177)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(435, 212)
+        Me.dgv.ReadOnly = True
+        Me.dgv.Size = New System.Drawing.Size(539, 212)
         Me.dgv.TabIndex = 2
         '
         'btnSimpan
         '
-        Me.btnSimpan.Location = New System.Drawing.Point(12, 302)
+        Me.btnSimpan.Location = New System.Drawing.Point(12, 404)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 45)
         Me.btnSimpan.TabIndex = 3
@@ -73,7 +80,7 @@ Partial Class PermintaanView
         '
         'btnBatal
         '
-        Me.btnBatal.Location = New System.Drawing.Point(93, 302)
+        Me.btnBatal.Location = New System.Drawing.Point(93, 404)
         Me.btnBatal.Name = "btnBatal"
         Me.btnBatal.Size = New System.Drawing.Size(75, 45)
         Me.btnBatal.TabIndex = 4
@@ -82,25 +89,17 @@ Partial Class PermintaanView
         '
         'btnKeluar
         '
-        Me.btnKeluar.Location = New System.Drawing.Point(174, 302)
+        Me.btnKeluar.Location = New System.Drawing.Point(174, 404)
         Me.btnKeluar.Name = "btnKeluar"
         Me.btnKeluar.Size = New System.Drawing.Size(75, 45)
         Me.btnKeluar.TabIndex = 5
         Me.btnKeluar.Text = "Keluar"
         Me.btnKeluar.UseVisualStyleBackColor = True
         '
-        'LBItems
-        '
-        Me.LBItems.FormattingEnabled = True
-        Me.LBItems.Location = New System.Drawing.Point(453, 75)
-        Me.LBItems.Name = "LBItems"
-        Me.LBItems.Size = New System.Drawing.Size(203, 212)
-        Me.LBItems.TabIndex = 6
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(300, 318)
+        Me.Label2.Location = New System.Drawing.Point(406, 404)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(40, 13)
         Me.Label2.TabIndex = 7
@@ -108,37 +107,102 @@ Partial Class PermintaanView
         '
         'txtJumlah
         '
-        Me.txtJumlah.Location = New System.Drawing.Point(346, 315)
+        Me.txtJumlah.Location = New System.Drawing.Point(452, 401)
         Me.txtJumlah.Name = "txtJumlah"
         Me.txtJumlah.Size = New System.Drawing.Size(100, 20)
         Me.txtJumlah.TabIndex = 8
         '
-        'txtCari
+        'cmbBarang
         '
-        Me.txtCari.Location = New System.Drawing.Point(506, 315)
-        Me.txtCari.Name = "txtCari"
-        Me.txtCari.Size = New System.Drawing.Size(150, 20)
-        Me.txtCari.TabIndex = 10
+        Me.cmbBarang.FormattingEnabled = True
+        Me.cmbBarang.Location = New System.Drawing.Point(329, 29)
+        Me.cmbBarang.Name = "cmbBarang"
+        Me.cmbBarang.Size = New System.Drawing.Size(222, 21)
+        Me.cmbBarang.TabIndex = 11
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(275, 32)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(41, 13)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Barang"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(275, 64)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(23, 13)
+        Me.Label5.TabIndex = 14
+        Me.Label5.Text = "Qty"
+        '
+        'cmbSupplier
+        '
+        Me.cmbSupplier.FormattingEnabled = True
+        Me.cmbSupplier.Location = New System.Drawing.Point(329, 94)
+        Me.cmbSupplier.Name = "cmbSupplier"
+        Me.cmbSupplier.Size = New System.Drawing.Size(222, 21)
+        Me.cmbSupplier.TabIndex = 13
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(275, 97)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(45, 13)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "Supplier"
+        '
+        'txtQty
+        '
+        Me.txtQty.Location = New System.Drawing.Point(329, 61)
+        Me.txtQty.Name = "txtQty"
+        Me.txtQty.Size = New System.Drawing.Size(92, 20)
+        Me.txtQty.TabIndex = 16
+        '
+        'btnTambah
+        '
+        Me.btnTambah.Location = New System.Drawing.Point(329, 131)
+        Me.btnTambah.Name = "btnTambah"
+        Me.btnTambah.Size = New System.Drawing.Size(159, 25)
+        Me.btnTambah.TabIndex = 17
+        Me.btnTambah.Text = "Tambah"
+        Me.btnTambah.UseVisualStyleBackColor = True
+        '
+        'txtNo
+        '
+        Me.txtNo.Location = New System.Drawing.Point(67, 32)
+        Me.txtNo.Name = "txtNo"
+        Me.txtNo.Size = New System.Drawing.Size(159, 20)
+        Me.txtNo.TabIndex = 19
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(460, 318)
+        Me.Label3.Location = New System.Drawing.Point(13, 35)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(25, 13)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Cari"
+        Me.Label3.Size = New System.Drawing.Size(21, 13)
+        Me.Label3.TabIndex = 18
+        Me.Label3.Text = "No"
         '
         'PermintaanView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(669, 355)
-        Me.Controls.Add(Me.txtCari)
+        Me.ClientSize = New System.Drawing.Size(567, 458)
+        Me.Controls.Add(Me.txtNo)
         Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.btnTambah)
+        Me.Controls.Add(Me.txtQty)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.cmbSupplier)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.cmbBarang)
         Me.Controls.Add(Me.txtJumlah)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.LBItems)
         Me.Controls.Add(Me.btnKeluar)
         Me.Controls.Add(Me.btnBatal)
         Me.Controls.Add(Me.btnSimpan)
@@ -158,9 +222,15 @@ Partial Class PermintaanView
     Friend WithEvents btnSimpan As System.Windows.Forms.Button
     Friend WithEvents btnBatal As System.Windows.Forms.Button
     Friend WithEvents btnKeluar As System.Windows.Forms.Button
-    Friend WithEvents LBItems As System.Windows.Forms.ListBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtJumlah As System.Windows.Forms.TextBox
-    Friend WithEvents txtCari As System.Windows.Forms.TextBox
+    Friend WithEvents cmbBarang As System.Windows.Forms.ComboBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents cmbSupplier As System.Windows.Forms.ComboBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents txtQty As System.Windows.Forms.TextBox
+    Friend WithEvents btnTambah As System.Windows.Forms.Button
+    Friend WithEvents txtNo As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

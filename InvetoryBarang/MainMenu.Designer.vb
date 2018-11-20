@@ -30,9 +30,9 @@ Partial Class MainMenu
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -111,14 +111,14 @@ Partial Class MainMenu
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Transaksi"
         '
-        'Button4
+        'Button6
         '
-        Me.Button4.Location = New System.Drawing.Point(17, 21)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 79)
-        Me.Button4.TabIndex = 5
-        Me.Button4.Text = "Permintaan"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button6.Location = New System.Drawing.Point(195, 21)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 79)
+        Me.Button6.TabIndex = 7
+        Me.Button6.Text = "Pengiriman"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'Button5
         '
@@ -129,14 +129,14 @@ Partial Class MainMenu
         Me.Button5.Text = "Penerimaan"
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'Button6
+        'Button4
         '
-        Me.Button6.Location = New System.Drawing.Point(195, 21)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 79)
-        Me.Button6.TabIndex = 7
-        Me.Button6.Text = "Pengiriman"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.Button4.Location = New System.Drawing.Point(17, 21)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 79)
+        Me.Button4.TabIndex = 5
+        Me.Button4.Text = "Permintaan"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'MainMenu
         '

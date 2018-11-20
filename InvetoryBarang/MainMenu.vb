@@ -15,4 +15,12 @@
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         PermintaanView.ShowDialog()
     End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        PenerimaanView.ShowDialog()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        PengirimanView.ShowDialog()
+    End Sub
 End Class
