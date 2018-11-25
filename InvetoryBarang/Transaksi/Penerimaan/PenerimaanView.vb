@@ -4,9 +4,35 @@
         clearForm()
         aturDgv()
         getItemsPermintaan()
+        txtNo.ReadOnly = True
+        txtNo.Text = autoNomor()
     End Sub
 
+    Protected Function autoNomor()
+        Dim no As String = 0
+
+        Dim query As String = "SELECT COUNT(*) AS items_count FROM purchase_receipts"
+
+        _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
+
+        _MySqlDataReader = _MySqlCommand.ExecuteReader
+
+        If _MySqlDataReader.HasRows Then
+            If _MySqlDataReader.Read Then
+                no = CInt(_MySqlDataReader.Item("items_count")) + 1
+            End If
+        End If
+
+        _MySqlCommand.Dispose()
+        _MySqlDataReader.Close()
+
+        Return Date.Now.ToString("ddMMyyyy") & no
+    End Function
+
     Public Sub aturDgv()
+
+        dgv.Columns.Clear()
+
         dgv.Columns.Add("Id", "Id")
         dgv.Columns("Id").Visible = False
         dgv.Columns.Add("ItemId", "ItemId")
@@ -42,6 +68,7 @@
         If dgv.RowCount > 0 Then
             dgv.CurrentRow.Selected = False
         End If
+        txtNo.Text = autoNomor()
     End Sub
 
     Public Sub getItemsPermintaan()
@@ -114,8 +141,48 @@
         End If
     End Sub
 
+    Protected Function valdateForm() As Boolean
+        Dim validate As Boolean = False
+        Try
+            If txtNo.Text = Nothing Or dtpTanggal.Value = Nothing Then
+                validate = False
+            Else
+                validate = True
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        Return validate
+    End Function
+
+    Protected Function checkQtyDgv() As Boolean
+        Dim validate As Boolean = False
+        Try
+            For Each row As DataGridViewRow In dgv.Rows
+                If row.Cells("Qty Datang").Value <> Nothing And IsNumeric(row.Cells("Qty Datang").Value) Then
+                    validate = True
+                End If
+            Next
+        Catch ex As Exception
+
+        End Try
+
+        Return validate
+    End Function
+
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
         Try
+            If Not valdateForm() Then
+                MessageBox.Show("Tolong Isi Form Input Dengan Benar", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            End If
+
+            If checkQtyDgv() Then
+
+            End If
+
+
             Dim itemSelected As ListObject = cmbPermintaan.SelectedItem
 
             Dim query As String
@@ -127,7 +194,6 @@
 
                 _MySqlCommand.ExecuteNonQuery()
             End If
-
 
             query = "INSERT INTO purchase_receipts VALUES ('', @no, @date, @purchase_order_id); SELECT LAST_INSERT_ID()"
 
@@ -196,5 +262,9 @@
         End Try
 
         _MySqlDataReader.Close()
+    End Sub
+
+    Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
+        clearForm()
     End Sub
 End Class

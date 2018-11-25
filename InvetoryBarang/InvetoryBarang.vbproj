@@ -84,7 +84,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\DatabaseSeeder.vb" />
     <Compile Include="Config\KoneksiDB.vb" />
+    <Compile Include="Helper\LoginInformation.vb" />
     <Compile Include="DataSet\DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -105,6 +107,12 @@
       <DependentUpon>MainMenu.vb</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenuDirektur.Designer.vb">
+      <DependentUpon>MainMenuDirektur.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenuDirektur.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Master\Barang\BarangView.Designer.vb">
@@ -146,6 +154,24 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Transaksi\History\Penerimaan\HistoryPenerimaanView.Designer.vb">
+      <DependentUpon>HistoryPenerimaanView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\History\Penerimaan\HistoryPenerimaanView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\History\Pengiriman\HistoryPengirimanView.Designer.vb">
+      <DependentUpon>HistoryPengirimanView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\History\Pengiriman\HistoryPengirimanView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\History\Permintaan\HistoryPermintaanView.Designer.vb">
+      <DependentUpon>HistoryPermintaanView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\History\Permintaan\HistoryPermintaanView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\Penerimaan\PenerimaanView.Designer.vb">
       <DependentUpon>PenerimaanView.vb</DependentUpon>
     </Compile>
@@ -172,11 +198,17 @@
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainMenuDirektur.resx">
+      <DependentUpon>MainMenuDirektur.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master\Barang\BarangView.resx">
       <DependentUpon>BarangView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Supplier\SupplierView.resx">
       <DependentUpon>SupplierView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\User\UserView.resx">
+      <DependentUpon>UserView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -187,6 +219,15 @@
     <EmbeddedResource Include="Report\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\History\Penerimaan\HistoryPenerimaanView.resx">
+      <DependentUpon>HistoryPenerimaanView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\History\Pengiriman\HistoryPengirimanView.resx">
+      <DependentUpon>HistoryPengirimanView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\History\Permintaan\HistoryPermintaanView.resx">
+      <DependentUpon>HistoryPermintaanView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\Penerimaan\PenerimaanView.resx">
       <DependentUpon>PenerimaanView.vb</DependentUpon>
@@ -227,6 +268,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

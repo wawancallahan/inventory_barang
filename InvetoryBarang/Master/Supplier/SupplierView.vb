@@ -4,6 +4,7 @@
     Dim updateDB As Boolean = False
 
     Private Sub SupplierView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dgv.Columns.Clear()
         Me.aturDgv()
         Me.getItems(dgv)
     End Sub
@@ -29,6 +30,7 @@
 
         dgv.ClearSelection()
         updateDB = False
+        selectedId = Nothing
 
         If dgv.RowCount > 0 Then
             dgv.CurrentRow.Selected = False
@@ -147,12 +149,33 @@
         End Try
     End Function
 
+    Protected Function validateForm()
+        Dim validate As Boolean = False
+        Try
+            If txtNama.Text = Nothing Or txtNama.Text.Length < 4 Then
+                validate = False
+            Else
+                validate = True
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        Return validate
+    End Function
+
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
         Dim data As Object = {
            txtNama.Text, _
            txtAlamat.Text, _
            txtTelepon.Text
-       }
+        }
+
+        If Not validateForm() Then
+            MessageBox.Show("Tolong Isi Form Input", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            getItems(dgv)
+            Exit Sub
+        End If
 
         Select Case updateDB
             Case True
@@ -184,15 +207,19 @@
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        If deleteData(selectedId) Then
-            MessageBox.Show("Berhasil menghapus data", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        If selectedId = Nothing Then
+            MessageBox.Show("Tidak ada data yang dipilih", "Perintagan", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            MessageBox.Show("Gagal menghapus data", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+            If deleteData(selectedId) Then
+                MessageBox.Show("Berhasil menghapus data", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Gagal menghapus data", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
 
-        Me.getItems(dgv)
-        clearForm()
-        updateDB = False
+            Me.getItems(dgv)
+            clearForm()
+            updateDB = False
+        End If
     End Sub
 
     Private Sub dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick
@@ -204,5 +231,9 @@
         End With
 
         updateDB = True
+    End Sub
+
+    Private Sub txtTelepon_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelepon.KeyPress
+        e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = Convert.ToChar(Keys.Back))
     End Sub
 End Class

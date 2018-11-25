@@ -11,9 +11,33 @@
         aturDgv()
         ignoreSelectedIndexChanged = False
         getItemsSupplier()
+        txtNo.ReadOnly = True
+        txtNo.Text = autoNomor()
     End Sub
 
+    Protected Function autoNomor()
+        Dim no As String
+
+        Dim query As String = "SELECT COUNT(*) AS items_count FROM purchase_orders"
+
+        _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
+
+        _MySqlDataReader = _MySqlCommand.ExecuteReader
+
+        If _MySqlDataReader.HasRows Then
+            If _MySqlDataReader.Read Then
+                no = CInt(_MySqlDataReader.Item("items_count")) + 1
+            End If
+        End If
+
+        _MySqlCommand.Dispose()
+        _MySqlDataReader.Close()
+
+        Return Date.Now.ToString("ddMMyyyy") & no
+    End Function
+
     Public Sub aturDgv()
+        dgv.Columns.Clear()
         dgv.Columns.Add("Id", "Id")
         dgv.Columns("Id").Visible = False
 
@@ -59,11 +83,14 @@
         If dgv.RowCount > 0 Then
             dgv.CurrentRow.Selected = False
         End If
+        txtNo.Clear()
         dtpTanggal.Value = Date.Now
         txtJumlah.Text = 0
         cmbBarang.SelectedIndex = -1
         cmbSupplier.SelectedIndex = -1
         txtQty.Clear()
+
+        txtNo.Text = autoNomor()
     End Sub
 
     Public Sub getItems()
@@ -107,8 +134,13 @@
     End Sub
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
-
         Try
+
+            If txtNo.Text = Nothing Or dtpTanggal.Value = Nothing Or dgv.Rows.Count <= 0 Then
+                MessageBox.Show("Tolong Isi Form Input Dengan Benar", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            End If
+
             Dim query As String = "INSERT INTO purchase_orders VALUES ('', @no, @date, @status); SELECT LAST_INSERT_ID()"
 
             _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
@@ -156,6 +188,15 @@
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         Try
+
+            If cmbBarang.SelectedIndex = -1 Or cmbSupplier.SelectedIndex = -1 Or _
+                Not IsNumeric(txtQty.Text) Or CInt(txtQty.Text) <= 0 Then
+
+                MessageBox.Show("Tolong Isi Form Input Dengan Benar", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                Exit Sub
+            End If
+
             Dim data(9) As String
 
             Dim selectedItem As ListObject = cmbBarang.SelectedItem
@@ -203,5 +244,9 @@
 
         _MySqlCommand.Dispose()
         _MySqlDataReader.Close()
+    End Sub
+
+    Private Sub txtQty_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQty.KeyPress
+        e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = Convert.ToChar(Keys.Back))
     End Sub
 End Class

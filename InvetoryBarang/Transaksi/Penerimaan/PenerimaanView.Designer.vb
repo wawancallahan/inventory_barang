@@ -38,12 +38,15 @@ Partial Class PenerimaanView
         Me.txtJumlahPermintaan = New System.Windows.Forms.TextBox()
         Me.cbSesuai = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtNo
         '
-        Me.txtNo.Location = New System.Drawing.Point(66, 21)
+        Me.txtNo.Location = New System.Drawing.Point(90, 21)
         Me.txtNo.Name = "txtNo"
         Me.txtNo.Size = New System.Drawing.Size(159, 20)
         Me.txtNo.TabIndex = 23
@@ -68,14 +71,14 @@ Partial Class PenerimaanView
         '
         'dtpTanggal
         '
-        Me.dtpTanggal.Location = New System.Drawing.Point(66, 51)
+        Me.dtpTanggal.Location = New System.Drawing.Point(90, 51)
         Me.dtpTanggal.Name = "dtpTanggal"
         Me.dtpTanggal.Size = New System.Drawing.Size(159, 20)
         Me.dtpTanggal.TabIndex = 20
         '
         'btnKeluar
         '
-        Me.btnKeluar.Location = New System.Drawing.Point(174, 380)
+        Me.btnKeluar.Location = New System.Drawing.Point(174, 402)
         Me.btnKeluar.Name = "btnKeluar"
         Me.btnKeluar.Size = New System.Drawing.Size(75, 45)
         Me.btnKeluar.TabIndex = 27
@@ -84,7 +87,7 @@ Partial Class PenerimaanView
         '
         'btnBatal
         '
-        Me.btnBatal.Location = New System.Drawing.Point(93, 380)
+        Me.btnBatal.Location = New System.Drawing.Point(93, 402)
         Me.btnBatal.Name = "btnBatal"
         Me.btnBatal.Size = New System.Drawing.Size(75, 45)
         Me.btnBatal.TabIndex = 26
@@ -93,7 +96,7 @@ Partial Class PenerimaanView
         '
         'btnSimpan
         '
-        Me.btnSimpan.Location = New System.Drawing.Point(12, 380)
+        Me.btnSimpan.Location = New System.Drawing.Point(12, 402)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 45)
         Me.btnSimpan.TabIndex = 25
@@ -178,11 +181,44 @@ Partial Class PenerimaanView
         Me.Label6.TabIndex = 36
         Me.Label6.Text = "Sesuai"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(73, 24)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
+        Me.Label7.TabIndex = 48
+        Me.Label7.Text = "*"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(73, 53)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(11, 13)
+        Me.Label8.TabIndex = 49
+        Me.Label8.Text = "*"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(212, 368)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(339, 12)
+        Me.Label9.TabIndex = 50
+        Me.Label9.Text = "Note : Isi Kolom Qty Datang Sesuai dengan Qty Barang Yang Datang Pada Saat Ini"
+        '
         'PenerimaanView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(570, 433)
+        Me.ClientSize = New System.Drawing.Size(570, 459)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.cbSesuai)
         Me.Controls.Add(Me.txtJumlahPermintaan)
@@ -222,4 +258,7 @@ Partial Class PenerimaanView
     Friend WithEvents txtJumlahPermintaan As System.Windows.Forms.TextBox
     Friend WithEvents cbSesuai As System.Windows.Forms.CheckBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class

@@ -37,13 +37,17 @@ Partial Class BarangView
         Me.btnHapus = New System.Windows.Forms.Button()
         Me.btnBatal = New System.Windows.Forms.Button()
         Me.btnKeluar = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 19)
+        Me.Label1.Location = New System.Drawing.Point(23, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(35, 13)
         Me.Label1.TabIndex = 0
@@ -93,7 +97,7 @@ Partial Class BarangView
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 71)
+        Me.Label3.Location = New System.Drawing.Point(32, 71)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(26, 13)
         Me.Label3.TabIndex = 5
@@ -109,7 +113,7 @@ Partial Class BarangView
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 97)
+        Me.Label4.Location = New System.Drawing.Point(32, 97)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(23, 13)
         Me.Label4.TabIndex = 7
@@ -125,7 +129,7 @@ Partial Class BarangView
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 123)
+        Me.Label5.Location = New System.Drawing.Point(17, 123)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(38, 13)
         Me.Label5.TabIndex = 9
@@ -167,11 +171,55 @@ Partial Class BarangView
         Me.btnKeluar.Text = "Keluar"
         Me.btnKeluar.UseVisualStyleBackColor = True
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(66, 19)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(11, 13)
+        Me.Label6.TabIndex = 46
+        Me.Label6.Text = "*"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(66, 45)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
+        Me.Label7.TabIndex = 47
+        Me.Label7.Text = "*"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(66, 71)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(11, 13)
+        Me.Label8.TabIndex = 48
+        Me.Label8.Text = "*"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.ForeColor = System.Drawing.Color.Red
+        Me.Label9.Location = New System.Drawing.Point(66, 97)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(11, 13)
+        Me.Label9.TabIndex = 49
+        Me.Label9.Text = "*"
+        '
         'BarangView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(496, 375)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnKeluar)
         Me.Controls.Add(Me.btnBatal)
         Me.Controls.Add(Me.btnHapus)
@@ -209,4 +257,8 @@ Partial Class BarangView
     Friend WithEvents btnHapus As System.Windows.Forms.Button
     Friend WithEvents btnBatal As System.Windows.Forms.Button
     Friend WithEvents btnKeluar As System.Windows.Forms.Button
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class

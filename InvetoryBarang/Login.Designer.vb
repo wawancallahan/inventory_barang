@@ -29,7 +29,7 @@ Partial Class Login
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
-        
+        '
         'txtUsername
         '
         Me.txtUsername.Location = New System.Drawing.Point(192, 20)

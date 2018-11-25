@@ -7,6 +7,7 @@
     End Sub
 
     Public Sub aturDgv()
+        dgv.Columns.Clear()
         dgv.EditMode = DataGridViewEditMode.EditOnEnter
         dgv.Columns.Add("Id", "Id")
         dgv.Columns("Id").Visible = False
@@ -61,6 +62,12 @@
     End Sub
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
+
+        If cmbBarang.SelectedIndex = -1 Or txtQty.Text = Nothing Or Not IsNumeric(txtQty.Text) Or _
+            MessageBox.Show("Tolong Isi Form Input Dengan Benar", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error) Then
+            Exit Sub
+        End If
+
         Dim itemSelected As ListObject = DirectCast(cmbBarang.SelectedItem, ListObject)
 
         Dim data() As String = {
@@ -83,15 +90,38 @@
         clearForm()
     End Sub
 
+    Protected Function validateForm()
+        Dim validate As Boolean = False
+        Try
+            If txtNo.Text = Nothing Or txtTujuan.Text = Nothing Or _
+                dtpTanggal.Value = Nothing Then
+                validate = False
+            Else
+                validate = True
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        Return validate
+    End Function
+
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
         Try
-            Dim query As String = "INSERT INTO deliveries VALUES ('', @no, @date); SELECT LAST_INSERT_ID()"
+            If Not validateForm() Then
+                MessageBox.Show("Tolong Isi Form Input Dengan Benar", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            End If
+
+
+            Dim query As String = "INSERT INTO deliveries VALUES ('', @no, @date, @destination); SELECT LAST_INSERT_ID()"
 
             _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
 
             With _MySqlCommand.Parameters
                 .AddWithValue("@no", txtNo.Text)
                 .AddWithValue("@date", dtpTanggal.Value)
+                .AddWithValue("@destination", txtTujuan.Text)
             End With
 
             Dim deliveryId As Integer = CInt(_MySqlCommand.ExecuteScalar())
