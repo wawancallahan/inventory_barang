@@ -34,4 +34,9 @@
     Private Sub PengirimanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PengirimanToolStripMenuItem.Click
         PengirimanView.ShowDialog()
     End Sub
+
+    Private Sub LoginToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginToolStripMenuItem.Click
+        Login.Show()
+        Me.Hide()
+    End Sub
 End Class

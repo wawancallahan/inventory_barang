@@ -39,6 +39,7 @@ Partial Class MainMenu
         Me.txtTanggal = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.txtAkses = New System.Windows.Forms.ToolStripLabel()
+        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -55,7 +56,7 @@ Partial Class MainMenu
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
@@ -76,19 +77,19 @@ Partial Class MainMenu
         'PermintaanToolStripMenuItem
         '
         Me.PermintaanToolStripMenuItem.Name = "PermintaanToolStripMenuItem"
-        Me.PermintaanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PermintaanToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.PermintaanToolStripMenuItem.Text = "Permintaan"
         '
         'PenerimaanToolStripMenuItem
         '
         Me.PenerimaanToolStripMenuItem.Name = "PenerimaanToolStripMenuItem"
-        Me.PenerimaanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PenerimaanToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.PenerimaanToolStripMenuItem.Text = "Penerimaan"
         '
         'PengirimanToolStripMenuItem
         '
         Me.PengirimanToolStripMenuItem.Name = "PengirimanToolStripMenuItem"
-        Me.PengirimanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PengirimanToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.PengirimanToolStripMenuItem.Text = "Pengiriman"
         '
         'GroupBox2
@@ -168,6 +169,12 @@ Partial Class MainMenu
         Me.txtAkses.Size = New System.Drawing.Size(12, 22)
         Me.txtAkses.Text = "-"
         '
+        'LoginToolStripMenuItem
+        '
+        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LoginToolStripMenuItem.Text = "Login"
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -205,4 +212,5 @@ Partial Class MainMenu
     Friend WithEvents txtTanggal As System.Windows.Forms.ToolStripLabel
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents txtAkses As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -4,7 +4,32 @@
         aturDgv()
         clearForm()
         getItemsBarang()
+        txtNo.ReadOnly = True
+        txtNo.Text = autoNomor()
+        txtMax.ReadOnly = True
+        cmbBarang.DropDownStyle = ComboBoxStyle.DropDownList
     End Sub
+
+    Protected Function autoNomor()
+        Dim no As String = 0
+
+        Dim query As String = "SELECT COUNT(*) AS items_count FROM purchase_receipts"
+
+        _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
+
+        _MySqlDataReader = _MySqlCommand.ExecuteReader
+
+        If _MySqlDataReader.HasRows Then
+            If _MySqlDataReader.Read Then
+                no = CInt(_MySqlDataReader.Item("items_count")) + 1
+            End If
+        End If
+
+        _MySqlCommand.Dispose()
+        _MySqlDataReader.Close()
+
+        Return Date.Now.ToString("ddMMyyyy") & no
+    End Function
 
     Public Sub aturDgv()
         dgv.Columns.Clear()
@@ -27,6 +52,7 @@
         If dgv.RowCount > 0 Then
             dgv.CurrentRow.Selected = False
         End If
+        txtNo.Text = autoNomor()
     End Sub
 
     Public Sub getItemsBarang()
@@ -63,12 +89,25 @@
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
 
-        If cmbBarang.SelectedIndex = -1 Or txtQty.Text = Nothing Or Not IsNumeric(txtQty.Text) Or _
-            MessageBox.Show("Tolong Isi Form Input Dengan Benar", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error) Then
+        If cmbBarang.SelectedIndex = -1 Or txtQty.Text = Nothing Or Not IsNumeric(txtQty.Text) Then
+            MessageBox.Show("Tolong Isi Form Input Dengan Benar", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        ElseIf CInt(txtQty.Text) <= 0 Then
+            MessageBox.Show("Qty tidak boleh kurang atau sama dengan nol (0)", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
+        If CInt(txtQty.Text) > CInt(txtMax.Text) Then
+            MessageBox.Show("Qty tidak boleh melebihi Qty Max", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
         Dim itemSelected As ListObject = DirectCast(cmbBarang.SelectedItem, ListObject)
+
+        Dim dataItem As Object = itemSelected.Data
+        dataItem(0) = CInt(dataItem(0)) - CInt(txtQty.Text)
+
+        itemSelected.Data = dataItem
 
         Dim data() As String = {
             itemSelected.Value,
@@ -181,5 +220,9 @@
         Else
             txtMax.Clear()
         End If
+    End Sub
+
+    Private Sub txtQty_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQty.KeyPress
+        e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = Convert.ToChar(Keys.Back))
     End Sub
 End Class

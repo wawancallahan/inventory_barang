@@ -13,10 +13,12 @@
         getItemsSupplier()
         txtNo.ReadOnly = True
         txtNo.Text = autoNomor()
+        cmbBarang.DropDownStyle = ComboBoxStyle.DropDownList
+        cmbSupplier.DropDownStyle = ComboBoxStyle.DropDownList
     End Sub
 
     Protected Function autoNomor()
-        Dim no As String
+        Dim no As String = 0
 
         Dim query As String = "SELECT COUNT(*) AS items_count FROM purchase_orders"
 
@@ -59,6 +61,7 @@
     End Sub
 
     Public Sub getItemsSupplier()
+        cmbSupplier.Items.Clear()
         Dim query As String = "SELECT * FROM suppliers"
 
         _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
@@ -96,6 +99,7 @@
     Public Sub getItems()
 
         Try
+            cmbBarang.Items.Clear()
             Dim query As String = "SELECT * FROM items"
 
             _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)

@@ -14,6 +14,7 @@
                     Case "Direktur"
                         MainMenuDirektur.Show()
                 End Select
+                clearForm()
                 Me.Hide()
             Else
                 MessageBox.Show("Username atau password tidak sesuai", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)

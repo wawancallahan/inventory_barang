@@ -43,6 +43,7 @@ Partial Class MainMenuDirektur
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -128,13 +129,13 @@ Partial Class MainMenuDirektur
         'PengirimanToolStripMenuItem1
         '
         Me.PengirimanToolStripMenuItem1.Name = "PengirimanToolStripMenuItem1"
-        Me.PengirimanToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.PengirimanToolStripMenuItem1.Size = New System.Drawing.Size(137, 22)
         Me.PengirimanToolStripMenuItem1.Text = "Pengiriman"
         '
         'PenerimaanToolStripMenuItem1
         '
         Me.PenerimaanToolStripMenuItem1.Name = "PenerimaanToolStripMenuItem1"
-        Me.PenerimaanToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.PenerimaanToolStripMenuItem1.Size = New System.Drawing.Size(137, 22)
         Me.PenerimaanToolStripMenuItem1.Text = "Penerimaan"
         '
         'HistoryToolStripMenuItem
@@ -147,7 +148,7 @@ Partial Class MainMenuDirektur
         'PermintaanToolStripMenuItem1
         '
         Me.PermintaanToolStripMenuItem1.Name = "PermintaanToolStripMenuItem1"
-        Me.PermintaanToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.PermintaanToolStripMenuItem1.Size = New System.Drawing.Size(137, 22)
         Me.PermintaanToolStripMenuItem1.Text = "Permintaan"
         '
         'SupplierToolStripMenuItem
@@ -178,12 +179,12 @@ Partial Class MainMenuDirektur
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(92, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
@@ -196,6 +197,12 @@ Partial Class MainMenuDirektur
         Me.MenuStrip1.Size = New System.Drawing.Size(522, 24)
         Me.MenuStrip1.TabIndex = 9
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'LoginToolStripMenuItem
+        '
+        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LoginToolStripMenuItem.Text = "Login"
         '
         'MainMenuDirektur
         '
@@ -237,4 +244,5 @@ Partial Class MainMenuDirektur
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents txtAkses As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents LoginToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
