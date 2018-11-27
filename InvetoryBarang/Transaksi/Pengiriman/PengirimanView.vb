@@ -41,6 +41,8 @@
         dgv.Columns.Add("Old Qty", "Old Qty")
         dgv.Columns("Old Qty").Visible = False
         dgv.Columns.Add("Jumlah", "Jumlah")
+        dgv.Columns.Add("item", "item")
+        dgv.Columns("item").Visible = False
     End Sub
 
     Public Sub clearForm()
@@ -110,14 +112,13 @@
 
         itemSelected.Data = dataItem
 
-        Dim data() As String = {
-            itemSelected.Value,
-            itemSelected.Text,
-            txtMax.Text,
-            txtQty.Text
-        }
-
-        dgv.Rows.Add(data)
+        dgv.Rows.Add({
+                     itemSelected.Value,
+                     itemSelected.Text,
+                     txtMax.Text,
+                     txtQty.Text,
+                     itemSelected
+                     })
         clearDataDgv()
     End Sub
 
@@ -128,6 +129,7 @@
 
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
         clearForm()
+        getItemsBarang()
     End Sub
 
     Protected Function validateForm()
@@ -230,6 +232,16 @@
     Private Sub dgv_KeyPress(sender As Object, e As KeyPressEventArgs) Handles dgv.KeyPress
         On Error Resume Next
         If e.KeyChar = Chr(27) Then
+            Dim itemSelected As ListObject = DirectCast(dgv.CurrentRow.Cells(4).Value, ListObject)
+            Dim dataItem As Object = itemSelected.Data
+            dataItem(0) = CInt(dataItem(0)) + CInt((dgv.CurrentRow.Cells(3).Value))
+
+            itemSelected.Data = dataItem
+
+            dgv.Rows.RemoveAt(dgv.CurrentRow.Index)
+            cmbBarang.SelectedIndex = -1
+            txtMax.Clear()
+            txtQty.Clear()
         End If
     End Sub
 End Class
