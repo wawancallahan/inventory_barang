@@ -33,6 +33,7 @@
 
     Public Sub aturDgv()
         dgv.Columns.Clear()
+        dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgv.EditMode = DataGridViewEditMode.EditOnEnter
         dgv.Columns.Add("Id", "Id")
         dgv.Columns("Id").Visible = False
@@ -224,5 +225,11 @@
 
     Private Sub txtQty_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQty.KeyPress
         e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = Convert.ToChar(Keys.Back))
+    End Sub
+
+    Private Sub dgv_KeyPress(sender As Object, e As KeyPressEventArgs) Handles dgv.KeyPress
+        On Error Resume Next
+        If e.KeyChar = Chr(27) Then
+        End If
     End Sub
 End Class

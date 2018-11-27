@@ -298,4 +298,9 @@
     Private Sub TextBox_keyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
         e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = Convert.ToChar(Keys.Back))
     End Sub
+
+    Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
+        clearForm()
+        Me.Hide()
+    End Sub
 End Class

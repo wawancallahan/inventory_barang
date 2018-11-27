@@ -33,6 +33,7 @@
     End Function
 
     Protected Function auth(Optional username As String = Nothing, Optional password As String = Nothing)
+        Dim toLogin As Boolean = False
         Try
             Dim query As String = "SELECT * FROM users WHERE BINARY username = '" & username & "' AND BINARY password = PASSWORD('" & password & "')"
 
@@ -48,7 +49,7 @@
                     LoginInformation.UserRole = _MySqlDataReader.Item("role")
                 End While
 
-                Return True
+                toLogin = True
             End If
 
             _MySqlCommand.Dispose()
@@ -58,7 +59,7 @@
 
         _MySqlDataReader.Close()
 
-        Return False
+        Return toLogin
     End Function
 
     Protected Sub clearForm()
