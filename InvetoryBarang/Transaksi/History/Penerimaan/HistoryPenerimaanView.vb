@@ -106,4 +106,28 @@
         aturDgv()
         getItems()
     End Sub
+
+    Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
+        With dgv.CurrentRow
+            Try
+                With FormHistory
+                    .dgv.Rows.Clear()
+                    .dgv.Columns.Clear()
+                    .dgv.Columns.Add("Nama", "Nama")
+                    .dgv.Columns.Add("Kategori", "Kategori")
+                    .dgv.Columns.Add("Unit", "Unit")
+                    .dgv.Columns.Add("Supplier", "Supplier")
+                    .dgv.Columns.Add("Qty Minta", "Qty Minta")
+                    .dgv.Columns.Add("Qty Diterima", "Qty Diterima")
+                End With
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+            _MySqlDataReader.Close()
+
+            FormHistory.ShowDialog()
+        End With
+    End Sub
 End Class

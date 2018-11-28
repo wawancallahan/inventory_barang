@@ -102,4 +102,47 @@
         clearForm()
         getItems()
     End Sub
+
+    Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
+        With dgv.CurrentRow
+            Try
+                With FormHistory
+                    .dgv.Rows.Clear()
+                    .dgv.Columns.Clear()
+                    .dgv.Columns.Add("Nama", "Nama")
+                    .dgv.Columns.Add("Kategori", "Kategori")
+                    .dgv.Columns.Add("Unit", "Unit")
+                    .dgv.Columns.Add("Qty", "Qty")
+                End With
+
+                Dim query As String = "SELECT delivery_details.qty AS delivery_details_qty, " & _
+                                      "items.id AS items_id, items.name AS items_name, items.category AS items_category, items.unit AS items_unit " & _
+                                      "FROM delivery_details " & _
+                                      "JOIN items ON delivery_details.item_id = items.id " & _
+                                      "WHERE delivery_details.delivery_id = '" & .Cells(0).Value & "'"
+
+                _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
+                _MySqlDataReader = _MySqlCommand.ExecuteReader
+
+                If _MySqlDataReader.HasRows Then
+                    While _MySqlDataReader.Read
+
+                        FormHistory.dgv.Rows.Add({
+                                      _MySqlDataReader.Item("items_name"),
+                                      _MySqlDataReader.Item("items_category"),
+                                      _MySqlDataReader.Item("items_unit"),
+                                      _MySqlDataReader.Item("delivery_details_qty")
+                                     })
+                    End While
+                End If
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+            _MySqlDataReader.Close()
+
+            FormHistory.ShowDialog()
+        End With
+    End Sub
 End Class

@@ -175,6 +175,12 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Transaksi\History\Components\FormHistory.Designer.vb">
+      <DependentUpon>FormHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\History\Components\FormHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\History\Penerimaan\HistoryPenerimaanView.Designer.vb">
       <DependentUpon>HistoryPenerimaanView.vb</DependentUpon>
     </Compile>
@@ -245,6 +251,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\History\Components\FormHistory.resx">
+      <DependentUpon>FormHistory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\History\Penerimaan\HistoryPenerimaanView.resx">
       <DependentUpon>HistoryPenerimaanView.vb</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +319,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
