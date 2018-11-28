@@ -51,4 +51,13 @@
         Login.Show()
         Me.Hide()
     End Sub
+
+    Private Sub BarangToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BarangToolStripMenuItem1.Click
+        BarangFormReport.ShowDialog()
+    End Sub
+
+    Private Sub PermintaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermintaanToolStripMenuItem.Click
+        PermintaanBarangReport.ShowDialog()
+
+    End Sub
 End Class

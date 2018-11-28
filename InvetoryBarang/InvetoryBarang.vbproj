@@ -107,6 +107,18 @@
     <Compile Include="FormReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormReport\BarangFormReport.Designer.vb">
+      <DependentUpon>BarangFormReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReport\BarangFormReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReport\PermintaanBarangReport.Designer.vb">
+      <DependentUpon>PermintaanBarangReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReport\PermintaanBarangReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Helper\LoginInformation.vb" />
     <Compile Include="DataSet\DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -181,6 +193,12 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\PermintaanReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PermintaanReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Transaksi\History\Components\FormHistory.Designer.vb">
       <DependentUpon>FormHistory.vb</DependentUpon>
     </Compile>
@@ -228,6 +246,12 @@
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReport\BarangFormReport.resx">
+      <DependentUpon>BarangFormReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReport\PermintaanBarangReport.resx">
+      <DependentUpon>PermintaanBarangReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +283,10 @@
     <EmbeddedResource Include="Report\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PermintaanReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PermintaanReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\History\Components\FormHistory.resx">
       <DependentUpon>FormHistory.vb</DependentUpon>
