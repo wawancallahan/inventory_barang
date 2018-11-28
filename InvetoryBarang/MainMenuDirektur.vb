@@ -60,4 +60,9 @@
         PermintaanBarangReport.ShowDialog()
 
     End Sub
+
+    Private Sub PengirimanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PengirimanToolStripMenuItem.Click
+        PengirimanBarangReport.ShowDialog()
+
+    End Sub
 End Class

@@ -47,6 +47,7 @@ Partial Class MainMenuDirektur
         Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarangToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PermintaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PengirimanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -55,7 +56,7 @@ Partial Class MainMenuDirektur
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(260, 26)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 97)
         Me.Button1.TabIndex = 7
@@ -65,7 +66,7 @@ Partial Class MainMenuDirektur
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(23, 26)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(100, 97)
         Me.Button3.TabIndex = 5
@@ -78,9 +79,9 @@ Partial Class MainMenuDirektur
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 48)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(380, 148)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
@@ -89,7 +90,7 @@ Partial Class MainMenuDirektur
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(143, 26)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(100, 97)
         Me.Button2.TabIndex = 6
@@ -215,7 +216,7 @@ Partial Class MainMenuDirektur
         '
         'LaporanToolStripMenuItem
         '
-        Me.LaporanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarangToolStripMenuItem1, Me.PermintaanToolStripMenuItem})
+        Me.LaporanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarangToolStripMenuItem1, Me.PermintaanToolStripMenuItem, Me.PengirimanToolStripMenuItem})
         Me.LaporanToolStripMenuItem.Name = "LaporanToolStripMenuItem"
         Me.LaporanToolStripMenuItem.Size = New System.Drawing.Size(75, 24)
         Me.LaporanToolStripMenuItem.Text = "Laporan"
@@ -232,6 +233,12 @@ Partial Class MainMenuDirektur
         Me.PermintaanToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
         Me.PermintaanToolStripMenuItem.Text = "Permintaan"
         '
+        'PengirimanToolStripMenuItem
+        '
+        Me.PengirimanToolStripMenuItem.Name = "PengirimanToolStripMenuItem"
+        Me.PengirimanToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
+        Me.PengirimanToolStripMenuItem.Text = "Pengiriman"
+        '
         'MainMenuDirektur
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -240,7 +247,7 @@ Partial Class MainMenuDirektur
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "MainMenuDirektur"
         Me.Text = "MainMenuDirektur"
         Me.GroupBox1.ResumeLayout(False)
@@ -277,4 +284,5 @@ Partial Class MainMenuDirektur
     Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BarangToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PermintaanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PengirimanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
