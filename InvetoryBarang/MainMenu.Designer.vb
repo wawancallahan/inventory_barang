@@ -24,6 +24,7 @@ Partial Class MainMenu
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PermintaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,7 +40,6 @@ Partial Class MainMenu
         Me.txtTanggal = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.txtAkses = New System.Windows.Forms.ToolStripLabel()
-        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -60,6 +60,12 @@ Partial Class MainMenu
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
+        '
+        'LoginToolStripMenuItem
+        '
+        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LoginToolStripMenuItem.Text = "Log Out"
         '
         'ExitToolStripMenuItem
         '
@@ -168,12 +174,6 @@ Partial Class MainMenu
         Me.txtAkses.Name = "txtAkses"
         Me.txtAkses.Size = New System.Drawing.Size(12, 22)
         Me.txtAkses.Text = "-"
-        '
-        'LoginToolStripMenuItem
-        '
-        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.LoginToolStripMenuItem.Text = "Login"
         '
         'MainMenu
         '
