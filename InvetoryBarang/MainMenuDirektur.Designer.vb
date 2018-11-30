@@ -22,10 +22,7 @@ Partial Class MainMenuDirektur
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.txtTanggal = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.txtNama = New System.Windows.Forms.ToolStripLabel()
@@ -47,49 +44,28 @@ Partial Class MainMenuDirektur
         Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarangToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PermintaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PengirimanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(195, 21)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 79)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Supplier"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(17, 21)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 79)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "User"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 39)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 48)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(285, 120)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Size = New System.Drawing.Size(345, 130)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Data Master"
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(107, 21)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 79)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "Barang"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'txtTanggal
         '
@@ -182,7 +158,7 @@ Partial Class MainMenuDirektur
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'FileToolStripMenuItem
@@ -195,7 +171,7 @@ Partial Class MainMenuDirektur
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.LoginToolStripMenuItem.Text = "Log Out"
         '
         'MenuStrip1
@@ -209,7 +185,7 @@ Partial Class MainMenuDirektur
         '
         'LaporanToolStripMenuItem
         '
-        Me.LaporanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarangToolStripMenuItem1, Me.PermintaanToolStripMenuItem})
+        Me.LaporanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarangToolStripMenuItem1, Me.PermintaanToolStripMenuItem, Me.PengirimanToolStripMenuItem})
         Me.LaporanToolStripMenuItem.Name = "LaporanToolStripMenuItem"
         Me.LaporanToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
         Me.LaporanToolStripMenuItem.Text = "Laporan"
@@ -226,6 +202,39 @@ Partial Class MainMenuDirektur
         Me.PermintaanToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.PermintaanToolStripMenuItem.Text = "Permintaan"
         '
+        'PengirimanToolStripMenuItem
+        '
+        Me.PengirimanToolStripMenuItem.Name = "PengirimanToolStripMenuItem"
+        Me.PengirimanToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.PengirimanToolStripMenuItem.Text = "Pengiriman"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(16, 20)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(89, 94)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "User"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(123, 20)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(89, 94)
+        Me.Button2.TabIndex = 14
+        Me.Button2.Text = "Barang"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(233, 20)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(89, 94)
+        Me.Button3.TabIndex = 15
+        Me.Button3.Text = "Supplier"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'MainMenuDirektur
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -234,6 +243,7 @@ Partial Class MainMenuDirektur
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "MainMenuDirektur"
         Me.Text = "MainMenuDirektur"
         Me.GroupBox1.ResumeLayout(False)
@@ -245,10 +255,7 @@ Partial Class MainMenuDirektur
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents txtTanggal As System.Windows.Forms.ToolStripLabel
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents txtNama As System.Windows.Forms.ToolStripLabel
@@ -270,4 +277,8 @@ Partial Class MainMenuDirektur
     Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BarangToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PermintaanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PengirimanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class
