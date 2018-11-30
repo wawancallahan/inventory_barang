@@ -23,6 +23,9 @@ Partial Class MainMenuDirektur
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.txtTanggal = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.txtNama = New System.Windows.Forms.ToolStripLabel()
@@ -45,9 +48,6 @@ Partial Class MainMenuDirektur
         Me.BarangToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PermintaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PengirimanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -66,6 +66,33 @@ Partial Class MainMenuDirektur
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Data Master"
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(233, 20)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(89, 94)
+        Me.Button3.TabIndex = 15
+        Me.Button3.Text = "Supplier"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(123, 20)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(89, 94)
+        Me.Button2.TabIndex = 14
+        Me.Button2.Text = "Barang"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(16, 20)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(89, 94)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "User"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'txtTanggal
         '
@@ -207,33 +234,6 @@ Partial Class MainMenuDirektur
         Me.PengirimanToolStripMenuItem.Name = "PengirimanToolStripMenuItem"
         Me.PengirimanToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.PengirimanToolStripMenuItem.Text = "Pengiriman"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(16, 20)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(89, 94)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "User"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(123, 20)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(89, 94)
-        Me.Button2.TabIndex = 14
-        Me.Button2.Text = "Barang"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(233, 20)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(89, 94)
-        Me.Button3.TabIndex = 15
-        Me.Button3.Text = "Supplier"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'MainMenuDirektur
         '
