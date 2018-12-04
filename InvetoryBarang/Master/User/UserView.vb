@@ -8,7 +8,7 @@
         txtPassword.UseSystemPasswordChar = True
 
         cmbAkses.Items.Add("Admin")
-        cmbAkses.Items.Add("Direktur")
+        cmbAkses.Items.Add("Manager")
         cmbAkses.DropDownStyle = ComboBoxStyle.DropDownList
 
         Me.aturDgv()

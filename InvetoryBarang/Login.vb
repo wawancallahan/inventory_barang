@@ -11,7 +11,7 @@
                 Select Case LoginInformation.UserRole
                     Case "Admin"
                         MainMenu.Show()
-                    Case "Direktur"
+                    Case "Manager"
                         MainMenuDirektur.Show()
                 End Select
                 clearForm()

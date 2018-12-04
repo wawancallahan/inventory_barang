@@ -22,7 +22,7 @@
             If user_count <= 0 Then
                 Dim users() As String = {
                     "Admin",
-                    "Direktur"
+                    "Manager"
                 }
 
                 For Each user As String In users
