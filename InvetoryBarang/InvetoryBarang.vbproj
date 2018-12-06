@@ -160,6 +160,12 @@
     <Compile Include="MainMenuDirektur.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Master\Barang\BarangAdminView.Designer.vb">
+      <DependentUpon>BarangAdminView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Barang\BarangAdminView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Master\Barang\BarangView.Designer.vb">
       <DependentUpon>BarangView.vb</DependentUpon>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenuDirektur.resx">
       <DependentUpon>MainMenuDirektur.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Barang\BarangAdminView.resx">
+      <DependentUpon>BarangAdminView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Barang\BarangView.resx">
       <DependentUpon>BarangView.vb</DependentUpon>

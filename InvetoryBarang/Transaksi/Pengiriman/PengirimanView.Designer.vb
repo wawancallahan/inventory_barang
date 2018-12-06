@@ -51,7 +51,7 @@ Partial Class PengirimanView
         Me.dgv.AllowUserToDeleteRows = False
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Location = New System.Drawing.Point(16, 194)
-        Me.dgv.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgv.Margin = New System.Windows.Forms.Padding(4)
         Me.dgv.Name = "dgv"
         Me.dgv.ReadOnly = True
         Me.dgv.Size = New System.Drawing.Size(709, 249)
@@ -70,7 +70,7 @@ Partial Class PengirimanView
         'btnTambah
         '
         Me.btnTambah.Location = New System.Drawing.Point(625, 159)
-        Me.btnTambah.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnTambah.Margin = New System.Windows.Forms.Padding(4)
         Me.btnTambah.Name = "btnTambah"
         Me.btnTambah.Size = New System.Drawing.Size(100, 28)
         Me.btnTambah.TabIndex = 2
@@ -80,7 +80,7 @@ Partial Class PengirimanView
         'txtNo
         '
         Me.txtNo.Location = New System.Drawing.Point(97, 26)
-        Me.txtNo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNo.Name = "txtNo"
         Me.txtNo.Size = New System.Drawing.Size(265, 22)
         Me.txtNo.TabIndex = 3
@@ -88,7 +88,7 @@ Partial Class PengirimanView
         'dtpTanggal
         '
         Me.dtpTanggal.Location = New System.Drawing.Point(97, 70)
-        Me.dtpTanggal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpTanggal.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpTanggal.Name = "dtpTanggal"
         Me.dtpTanggal.Size = New System.Drawing.Size(265, 22)
         Me.dtpTanggal.TabIndex = 4
@@ -107,7 +107,7 @@ Partial Class PengirimanView
         '
         Me.cmbBarang.FormattingEnabled = True
         Me.cmbBarang.Location = New System.Drawing.Point(16, 161)
-        Me.cmbBarang.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbBarang.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbBarang.Name = "cmbBarang"
         Me.cmbBarang.Size = New System.Drawing.Size(323, 24)
         Me.cmbBarang.TabIndex = 6
@@ -115,7 +115,7 @@ Partial Class PengirimanView
         'txtQty
         '
         Me.txtQty.Location = New System.Drawing.Point(437, 162)
-        Me.txtQty.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtQty.Margin = New System.Windows.Forms.Padding(4)
         Me.txtQty.Name = "txtQty"
         Me.txtQty.Size = New System.Drawing.Size(179, 22)
         Me.txtQty.TabIndex = 7
@@ -153,7 +153,7 @@ Partial Class PengirimanView
         'txtMax
         '
         Me.txtMax.Location = New System.Drawing.Point(348, 161)
-        Me.txtMax.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtMax.Margin = New System.Windows.Forms.Padding(4)
         Me.txtMax.Name = "txtMax"
         Me.txtMax.Size = New System.Drawing.Size(80, 22)
         Me.txtMax.TabIndex = 11
@@ -161,7 +161,7 @@ Partial Class PengirimanView
         'btnSimpan
         '
         Me.btnSimpan.Location = New System.Drawing.Point(16, 465)
-        Me.btnSimpan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSimpan.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(100, 46)
         Me.btnSimpan.TabIndex = 12
@@ -171,7 +171,7 @@ Partial Class PengirimanView
         'btnBatal
         '
         Me.btnBatal.Location = New System.Drawing.Point(124, 465)
-        Me.btnBatal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBatal.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBatal.Name = "btnBatal"
         Me.btnBatal.Size = New System.Drawing.Size(100, 46)
         Me.btnBatal.TabIndex = 13
@@ -181,7 +181,7 @@ Partial Class PengirimanView
         'btnKeluar
         '
         Me.btnKeluar.Location = New System.Drawing.Point(232, 465)
-        Me.btnKeluar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnKeluar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnKeluar.Name = "btnKeluar"
         Me.btnKeluar.Size = New System.Drawing.Size(100, 46)
         Me.btnKeluar.TabIndex = 14
@@ -191,7 +191,7 @@ Partial Class PengirimanView
         'txtTujuan
         '
         Me.txtTujuan.Location = New System.Drawing.Point(459, 26)
-        Me.txtTujuan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTujuan.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTujuan.Name = "txtTujuan"
         Me.txtTujuan.Size = New System.Drawing.Size(265, 22)
         Me.txtTujuan.TabIndex = 16
@@ -264,8 +264,9 @@ Partial Class PengirimanView
         Me.Controls.Add(Me.btnTambah)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgv)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "PengirimanView"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PengirimanView"
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

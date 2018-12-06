@@ -35,17 +35,18 @@ Partial Class PermintaanBarangReport
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(727, 465)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1211, 878)
         Me.CrystalReportViewer1.TabIndex = 0
         Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
-        'PermintaanBarang
+        'PermintaanBarangReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(727, 465)
+        Me.ClientSize = New System.Drawing.Size(1211, 878)
         Me.Controls.Add(Me.CrystalReportViewer1)
-        Me.Name = "PermintaanBarang"
+        Me.Name = "PermintaanBarangReport"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PermintaanBarang"
         Me.ResumeLayout(False)
 

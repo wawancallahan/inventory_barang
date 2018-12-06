@@ -69,4 +69,20 @@
     Private Sub PenerimaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PenerimaanToolStripMenuItem.Click
         PenerimaanBarangReport.ShowDialog()
     End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        SupplierView.ShowDialog()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        BarangView.ShowDialog()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        UserView.ShowDialog()
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

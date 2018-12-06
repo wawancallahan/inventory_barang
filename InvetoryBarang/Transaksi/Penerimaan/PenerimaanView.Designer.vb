@@ -47,7 +47,7 @@ Partial Class PenerimaanView
         'txtNo
         '
         Me.txtNo.Location = New System.Drawing.Point(120, 26)
-        Me.txtNo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNo.Name = "txtNo"
         Me.txtNo.Size = New System.Drawing.Size(211, 22)
         Me.txtNo.TabIndex = 23
@@ -75,7 +75,7 @@ Partial Class PenerimaanView
         'dtpTanggal
         '
         Me.dtpTanggal.Location = New System.Drawing.Point(120, 63)
-        Me.dtpTanggal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpTanggal.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpTanggal.Name = "dtpTanggal"
         Me.dtpTanggal.Size = New System.Drawing.Size(211, 22)
         Me.dtpTanggal.TabIndex = 20
@@ -83,7 +83,7 @@ Partial Class PenerimaanView
         'btnKeluar
         '
         Me.btnKeluar.Location = New System.Drawing.Point(232, 495)
-        Me.btnKeluar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnKeluar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnKeluar.Name = "btnKeluar"
         Me.btnKeluar.Size = New System.Drawing.Size(100, 55)
         Me.btnKeluar.TabIndex = 27
@@ -93,7 +93,7 @@ Partial Class PenerimaanView
         'btnBatal
         '
         Me.btnBatal.Location = New System.Drawing.Point(124, 495)
-        Me.btnBatal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBatal.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBatal.Name = "btnBatal"
         Me.btnBatal.Size = New System.Drawing.Size(100, 55)
         Me.btnBatal.TabIndex = 26
@@ -103,7 +103,7 @@ Partial Class PenerimaanView
         'btnSimpan
         '
         Me.btnSimpan.Location = New System.Drawing.Point(16, 495)
-        Me.btnSimpan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSimpan.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(100, 55)
         Me.btnSimpan.TabIndex = 25
@@ -116,7 +116,7 @@ Partial Class PenerimaanView
         Me.dgv.AllowUserToDeleteRows = False
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Location = New System.Drawing.Point(16, 188)
-        Me.dgv.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgv.Margin = New System.Windows.Forms.Padding(4)
         Me.dgv.Name = "dgv"
         Me.dgv.Size = New System.Drawing.Size(719, 261)
         Me.dgv.TabIndex = 24
@@ -135,7 +135,7 @@ Partial Class PenerimaanView
         '
         Me.cmbPermintaan.FormattingEnabled = True
         Me.cmbPermintaan.Location = New System.Drawing.Point(439, 26)
-        Me.cmbPermintaan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbPermintaan.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbPermintaan.Name = "cmbPermintaan"
         Me.cmbPermintaan.Size = New System.Drawing.Size(295, 24)
         Me.cmbPermintaan.TabIndex = 28
@@ -153,7 +153,7 @@ Partial Class PenerimaanView
         'dtpTanggalPermintaan
         '
         Me.dtpTanggalPermintaan.Location = New System.Drawing.Point(439, 65)
-        Me.dtpTanggalPermintaan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpTanggalPermintaan.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpTanggalPermintaan.Name = "dtpTanggalPermintaan"
         Me.dtpTanggalPermintaan.Size = New System.Drawing.Size(295, 22)
         Me.dtpTanggalPermintaan.TabIndex = 30
@@ -171,7 +171,7 @@ Partial Class PenerimaanView
         'txtJumlahPermintaan
         '
         Me.txtJumlahPermintaan.Location = New System.Drawing.Point(439, 101)
-        Me.txtJumlahPermintaan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtJumlahPermintaan.Margin = New System.Windows.Forms.Padding(4)
         Me.txtJumlahPermintaan.Name = "txtJumlahPermintaan"
         Me.txtJumlahPermintaan.Size = New System.Drawing.Size(211, 22)
         Me.txtJumlahPermintaan.TabIndex = 34
@@ -180,7 +180,7 @@ Partial Class PenerimaanView
         '
         Me.cbSesuai.AutoSize = True
         Me.cbSesuai.Location = New System.Drawing.Point(439, 144)
-        Me.cbSesuai.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbSesuai.Margin = New System.Windows.Forms.Padding(4)
         Me.cbSesuai.Name = "cbSesuai"
         Me.cbSesuai.Size = New System.Drawing.Size(47, 21)
         Me.cbSesuai.TabIndex = 35
@@ -254,8 +254,9 @@ Partial Class PenerimaanView
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dtpTanggal)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "PenerimaanView"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PenerimaanView"
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
