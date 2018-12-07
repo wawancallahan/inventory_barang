@@ -30,8 +30,10 @@
 
             If key <> Nothing Then
 
-                query = "SELECT * FROM items " & _
-                        "JOIN stocks ON items.id = stocks.id " & _
+                query = "SELECT items.id AS items_id, items.name AS items_name, items.category AS items_category, items.unit AS items_unit," & _
+                        "stocks.qty AS stocks_qty, stocks.location AS stocks_location " & _
+                        "FROM items " & _
+                        "JOIN stocks ON items.id = stocks.item_id " & _
                         "WHERE items.name LIKE '%" & key & "%' OR items.category LIKE '%" & key & "%' OR items.unit LIKE '%" & key & "%' " & _
                         "OR stocks.location LIKE '%" & key & "%'"
 
@@ -71,4 +73,11 @@
         _MySqlDataReader.Close()
     End Sub
 
+    Private Sub txtCari_TextChanged(sender As Object, e As EventArgs) Handles txtCari.TextChanged
+        If txtCari.Text <> Nothing Then
+            getItems(dgv, txtCari.Text)
+        Else
+            getItems(dgv)
+        End If
+    End Sub
 End Class

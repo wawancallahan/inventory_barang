@@ -206,10 +206,39 @@
         Me.Hide()
     End Sub
 
+    Protected Function SupplierHasData(id As String)
+        Try
+            Dim data As Integer = 0
+            Dim query As String = "SELECT COUNT(*) AS purchase_order_details_count FROM purchase_order_details WHERE supplier_id = '" & id & "'"
+            _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
+            _MySqlDataReader = _MySqlCommand.ExecuteReader
+
+            If _MySqlDataReader.HasRows Then
+                If _MySqlDataReader.Read Then
+                    data = _MySqlDataReader.Item("purchase_order_details_count")
+                End If
+            End If
+
+            _MySqlDataReader.Dispose()
+
+            Return data > 0
+        Catch ex As Exception
+            _MySqlDataReader.Dispose()
+            Return False
+        End Try
+    End Function
+
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
         If selectedId = Nothing Then
             MessageBox.Show("Tidak ada data yang dipilih", "Perintagan", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
+
+            If SupplierHasData(selectedId) Then
+                MessageBox.Show("Gagal menghapus data, Supplier ini sudah terelasi pada sebuah Transaksi", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Exit Sub
+            End If
+
             If deleteData(selectedId) Then
                 MessageBox.Show("Berhasil menghapus data", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
@@ -235,5 +264,13 @@
 
     Private Sub txtTelepon_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelepon.KeyPress
         e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = Convert.ToChar(Keys.Back))
+    End Sub
+
+    Private Sub txtCari_TextChanged(sender As Object, e As EventArgs) Handles txtCari.TextChanged
+        If txtCari.Text <> Nothing Then
+            getItems(dgv, txtCari.Text)
+        Else
+            getItems(dgv)
+        End If
     End Sub
 End Class

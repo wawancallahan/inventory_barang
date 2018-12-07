@@ -48,8 +48,10 @@
 
             If key <> Nothing Then
 
-                query = "SELECT * FROM items " & _
-                        "JOIN stocks ON items.id = stocks.id " & _
+                query = "SELECT items.id AS items_id, items.name AS items_name, items.category AS items_category, items.unit AS items_unit," & _
+                        "stocks.qty AS stocks_qty, stocks.location AS stocks_location " & _
+                        "FROM items " & _
+                        "JOIN stocks ON items.id = stocks.item_id " & _
                         "WHERE items.name LIKE '%" & key & "%' OR items.category LIKE '%" & key & "%' OR items.unit LIKE '%" & key & "%' " & _
                         "OR stocks.location LIKE '%" & key & "%'"
 
@@ -66,6 +68,7 @@
             _MySqlDataReader = _MySqlCommand.ExecuteReader
 
             If _MySqlDataReader.HasRows Then
+
                 While _MySqlDataReader.Read
 
                     Dim data As String() = {
@@ -237,10 +240,50 @@
         Me.Hide()
     End Sub
 
+    Public Function BarangHasData(id As String)
+        Try
+            Dim data As Integer = 0
+            Dim query As String = "SELECT COUNT(*) AS purchase_order_details_count FROM purchase_order_details WHERE item_id = '" & id & "'"
+            _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
+            _MySqlDataReader = _MySqlCommand.ExecuteReader
+
+            If _MySqlDataReader.HasRows Then
+                If _MySqlDataReader.Read Then
+                    data = data + _MySqlDataReader.Item("purchase_order_details_count")
+                End If
+            End If
+
+            _MySqlDataReader.Dispose()
+
+            query = "SELECT COUNT(*) AS delivery_details_count FROM delivery_details WHERE item_id = '" & id & "'"
+            _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
+            _MySqlDataReader = _MySqlCommand.ExecuteReader
+
+            If _MySqlDataReader.HasRows Then
+                If _MySqlDataReader.Read Then
+                    data = data + _MySqlDataReader.Item("delivery_details_count")
+                End If
+            End If
+
+            _MySqlDataReader.Dispose()
+
+            Return data > 0
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
         If selectedId = Nothing Then
             MessageBox.Show("Tidak ada data yang dipilih", "Perintagan", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
+
+            If BarangHasData(selectedId) Then
+                MessageBox.Show("Gagal menghapus data, Barang ini sudah terelasi pada sebuah Transaksi", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Exit Sub
+            End If
+
             If deleteData(selectedId) Then
                 MessageBox.Show("Berhasil menghapus data", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
@@ -255,6 +298,10 @@
     End Sub
 
     Private Sub dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick
+        If e.RowIndex < 0 Then
+            Exit Sub
+        End If
+
         With dgv.Rows(e.RowIndex)
             selectedId = .Cells("Id").Value
             txtNama.Text = .Cells("Nama").Value
@@ -269,5 +316,13 @@
 
     Private Sub txtQty_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQty.KeyPress
         e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = Convert.ToChar(Keys.Back))
+    End Sub
+
+    Private Sub txtCari_TextChanged(sender As Object, e As EventArgs) Handles txtCari.TextChanged
+        If txtCari.Text <> Nothing Then
+            getItems(dgv, txtCari.Text)
+        Else
+            getItems(dgv)
+        End If
     End Sub
 End Class

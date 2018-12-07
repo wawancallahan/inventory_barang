@@ -204,6 +204,10 @@
     End Sub
 
     Private Sub dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick
+        If e.RowIndex < 0 Then
+            Exit Sub
+        End If
+
         With dgv.Rows(e.RowIndex)
             selectedId = .Cells("Id").Value
             txtUsername.Text = .Cells("User").Value
@@ -308,5 +312,13 @@
         clearForm()
         updateDB = False
         selectedId = Nothing
+    End Sub
+
+    Private Sub txtCari_TextChanged(sender As Object, e As EventArgs) Handles txtCari.TextChanged
+        If txtCari.Text <> Nothing Then
+            getItems(txtCari.Text)
+        Else
+            getItems()
+        End If
     End Sub
 End Class
