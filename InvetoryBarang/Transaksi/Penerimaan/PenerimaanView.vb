@@ -6,6 +6,7 @@
         getItemsPermintaan()
         txtNo.ReadOnly = True
         txtNo.Text = autoNomor()
+        txtJumlahPermintaan.ReadOnly = True
         cmbPermintaan.DropDownStyle = ComboBoxStyle.DropDownList
     End Sub
 

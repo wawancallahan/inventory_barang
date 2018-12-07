@@ -53,7 +53,7 @@ Partial Class MainMenuDirektur
         Me.PermintaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PengirimanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenerimaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtRole = New System.Windows.Forms.TextBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,11 +72,11 @@ Partial Class MainMenuDirektur
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Location = New System.Drawing.Point(486, 173)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(5)
+        Me.GroupBox1.Location = New System.Drawing.Point(364, 141)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(5)
-        Me.GroupBox1.Size = New System.Drawing.Size(847, 356)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(635, 289)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Data Master"
@@ -84,9 +84,10 @@ Partial Class MainMenuDirektur
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(576, 35)
+        Me.PictureBox3.Location = New System.Drawing.Point(432, 28)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(237, 218)
+        Me.PictureBox3.Size = New System.Drawing.Size(178, 177)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 18
         Me.PictureBox3.TabStop = False
@@ -94,9 +95,10 @@ Partial Class MainMenuDirektur
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(303, 35)
+        Me.PictureBox2.Location = New System.Drawing.Point(227, 28)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(237, 218)
+        Me.PictureBox2.Size = New System.Drawing.Size(178, 177)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 17
         Me.PictureBox2.TabStop = False
@@ -104,9 +106,10 @@ Partial Class MainMenuDirektur
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(33, 35)
+        Me.PictureBox1.Location = New System.Drawing.Point(25, 28)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(237, 218)
+        Me.PictureBox1.Size = New System.Drawing.Size(178, 177)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
@@ -115,10 +118,9 @@ Partial Class MainMenuDirektur
         '
         Me.Button3.BackColor = System.Drawing.Color.Lime
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(576, 260)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button3.Location = New System.Drawing.Point(432, 211)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(237, 58)
+        Me.Button3.Size = New System.Drawing.Size(178, 47)
         Me.Button3.TabIndex = 15
         Me.Button3.Text = "Supplier"
         Me.Button3.UseVisualStyleBackColor = False
@@ -127,10 +129,9 @@ Partial Class MainMenuDirektur
         '
         Me.Button2.BackColor = System.Drawing.Color.Lime
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(303, 260)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Location = New System.Drawing.Point(227, 211)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(237, 58)
+        Me.Button2.Size = New System.Drawing.Size(178, 47)
         Me.Button2.TabIndex = 14
         Me.Button2.Text = "Barang"
         Me.Button2.UseVisualStyleBackColor = False
@@ -139,10 +140,9 @@ Partial Class MainMenuDirektur
         '
         Me.Button1.BackColor = System.Drawing.Color.Lime
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(33, 260)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Location = New System.Drawing.Point(25, 211)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(237, 58)
+        Me.Button1.Size = New System.Drawing.Size(178, 47)
         Me.Button1.TabIndex = 13
         Me.Button1.Text = "User"
         Me.Button1.UseVisualStyleBackColor = False
@@ -150,7 +150,7 @@ Partial Class MainMenuDirektur
         'txtTanggal
         '
         Me.txtTanggal.Name = "txtTanggal"
-        Me.txtTanggal.Size = New System.Drawing.Size(15, 22)
+        Me.txtTanggal.Size = New System.Drawing.Size(12, 22)
         Me.txtTanggal.Text = "-"
         '
         'ToolStripSeparator1
@@ -161,16 +161,16 @@ Partial Class MainMenuDirektur
         'txtNama
         '
         Me.txtNama.Name = "txtNama"
-        Me.txtNama.Size = New System.Drawing.Size(15, 22)
+        Me.txtNama.Size = New System.Drawing.Size(12, 22)
         Me.txtNama.Text = "-"
         '
         'ToolStrip1
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.txtNama, Me.ToolStripSeparator1, Me.txtTanggal, Me.ToolStripSeparator2, Me.txtAkses})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 694)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 559)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1359, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1019, 25)
         Me.ToolStrip1.TabIndex = 11
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -182,76 +182,76 @@ Partial Class MainMenuDirektur
         'txtAkses
         '
         Me.txtAkses.Name = "txtAkses"
-        Me.txtAkses.Size = New System.Drawing.Size(15, 22)
+        Me.txtAkses.Size = New System.Drawing.Size(12, 22)
         Me.txtAkses.Text = "-"
         '
         'PengirimanToolStripMenuItem1
         '
         Me.PengirimanToolStripMenuItem1.Name = "PengirimanToolStripMenuItem1"
-        Me.PengirimanToolStripMenuItem1.Size = New System.Drawing.Size(155, 24)
+        Me.PengirimanToolStripMenuItem1.Size = New System.Drawing.Size(137, 22)
         Me.PengirimanToolStripMenuItem1.Text = "Pengiriman"
         '
         'PenerimaanToolStripMenuItem1
         '
         Me.PenerimaanToolStripMenuItem1.Name = "PenerimaanToolStripMenuItem1"
-        Me.PenerimaanToolStripMenuItem1.Size = New System.Drawing.Size(155, 24)
+        Me.PenerimaanToolStripMenuItem1.Size = New System.Drawing.Size(137, 22)
         Me.PenerimaanToolStripMenuItem1.Text = "Penerimaan"
         '
         'HistoryToolStripMenuItem
         '
         Me.HistoryToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PermintaanToolStripMenuItem1, Me.PenerimaanToolStripMenuItem1, Me.PengirimanToolStripMenuItem1})
         Me.HistoryToolStripMenuItem.Name = "HistoryToolStripMenuItem"
-        Me.HistoryToolStripMenuItem.Size = New System.Drawing.Size(68, 24)
+        Me.HistoryToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.HistoryToolStripMenuItem.Text = "History"
         '
         'PermintaanToolStripMenuItem1
         '
         Me.PermintaanToolStripMenuItem1.Name = "PermintaanToolStripMenuItem1"
-        Me.PermintaanToolStripMenuItem1.Size = New System.Drawing.Size(155, 24)
+        Me.PermintaanToolStripMenuItem1.Size = New System.Drawing.Size(137, 22)
         Me.PermintaanToolStripMenuItem1.Text = "Permintaan"
         '
         'SupplierToolStripMenuItem
         '
         Me.SupplierToolStripMenuItem.Name = "SupplierToolStripMenuItem"
-        Me.SupplierToolStripMenuItem.Size = New System.Drawing.Size(133, 24)
+        Me.SupplierToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.SupplierToolStripMenuItem.Text = "Supplier"
         '
         'BarangToolStripMenuItem
         '
         Me.BarangToolStripMenuItem.Name = "BarangToolStripMenuItem"
-        Me.BarangToolStripMenuItem.Size = New System.Drawing.Size(133, 24)
+        Me.BarangToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.BarangToolStripMenuItem.Text = "Barang"
         '
         'UserToolStripMenuItem
         '
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(133, 24)
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.UserToolStripMenuItem.Text = "User"
         '
         'DataMasterToolStripMenuItem
         '
         Me.DataMasterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserToolStripMenuItem, Me.BarangToolStripMenuItem, Me.SupplierToolStripMenuItem})
         Me.DataMasterToolStripMenuItem.Name = "DataMasterToolStripMenuItem"
-        Me.DataMasterToolStripMenuItem.Size = New System.Drawing.Size(102, 24)
+        Me.DataMasterToolStripMenuItem.Size = New System.Drawing.Size(82, 20)
         Me.DataMasterToolStripMenuItem.Text = "Data Master"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(131, 24)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'FileToolStripMenuItem
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(131, 24)
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.LoginToolStripMenuItem.Text = "Log Out"
         '
         'MenuStrip1
@@ -259,8 +259,7 @@ Partial Class MainMenuDirektur
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataMasterToolStripMenuItem, Me.HistoryToolStripMenuItem, Me.LaporanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1359, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1019, 24)
         Me.MenuStrip1.TabIndex = 9
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -268,67 +267,69 @@ Partial Class MainMenuDirektur
         '
         Me.LaporanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarangToolStripMenuItem1, Me.PermintaanToolStripMenuItem, Me.PengirimanToolStripMenuItem, Me.PenerimaanToolStripMenuItem})
         Me.LaporanToolStripMenuItem.Name = "LaporanToolStripMenuItem"
-        Me.LaporanToolStripMenuItem.Size = New System.Drawing.Size(75, 24)
+        Me.LaporanToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
         Me.LaporanToolStripMenuItem.Text = "Laporan"
         '
         'BarangToolStripMenuItem1
         '
         Me.BarangToolStripMenuItem1.Name = "BarangToolStripMenuItem1"
-        Me.BarangToolStripMenuItem1.Size = New System.Drawing.Size(155, 24)
+        Me.BarangToolStripMenuItem1.Size = New System.Drawing.Size(137, 22)
         Me.BarangToolStripMenuItem1.Text = "Barang"
         '
         'PermintaanToolStripMenuItem
         '
         Me.PermintaanToolStripMenuItem.Name = "PermintaanToolStripMenuItem"
-        Me.PermintaanToolStripMenuItem.Size = New System.Drawing.Size(155, 24)
+        Me.PermintaanToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.PermintaanToolStripMenuItem.Text = "Permintaan"
         '
         'PengirimanToolStripMenuItem
         '
         Me.PengirimanToolStripMenuItem.Name = "PengirimanToolStripMenuItem"
-        Me.PengirimanToolStripMenuItem.Size = New System.Drawing.Size(155, 24)
+        Me.PengirimanToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.PengirimanToolStripMenuItem.Text = "Pengiriman"
         '
         'PenerimaanToolStripMenuItem
         '
         Me.PenerimaanToolStripMenuItem.Name = "PenerimaanToolStripMenuItem"
-        Me.PenerimaanToolStripMenuItem.Size = New System.Drawing.Size(155, 24)
+        Me.PenerimaanToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.PenerimaanToolStripMenuItem.Text = "Penerimaan"
         '
-        'TextBox1
+        'txtRole
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.Black
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.SystemColors.MenuBar
-        Me.TextBox1.Location = New System.Drawing.Point(28, 551)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(422, 38)
-        Me.TextBox1.TabIndex = 20
-        Me.TextBox1.Text = "MANAGER"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtRole.BackColor = System.Drawing.Color.Black
+        Me.txtRole.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRole.ForeColor = System.Drawing.SystemColors.MenuBar
+        Me.txtRole.Location = New System.Drawing.Point(21, 448)
+        Me.txtRole.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtRole.Name = "txtRole"
+        Me.txtRole.Size = New System.Drawing.Size(318, 32)
+        Me.txtRole.TabIndex = 20
+        Me.txtRole.Text = "MANAGER"
+        Me.txtRole.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'PictureBox4
         '
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(28, 124)
+        Me.PictureBox4.Location = New System.Drawing.Point(21, 101)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(422, 405)
+        Me.PictureBox4.Size = New System.Drawing.Size(316, 329)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 19
         Me.PictureBox4.TabStop = False
         '
         'MainMenuDirektur
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Highlight
-        Me.ClientSize = New System.Drawing.Size(1359, 719)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(1019, 584)
+        Me.Controls.Add(Me.txtRole)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Margin = New System.Windows.Forms.Padding(5)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "MainMenuDirektur"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -376,6 +377,6 @@ Partial Class MainMenuDirektur
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtRole As System.Windows.Forms.TextBox
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
 End Class

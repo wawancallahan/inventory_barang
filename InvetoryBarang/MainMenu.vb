@@ -5,6 +5,7 @@
         txtNama.Text = "Login : " & LoginInformation.UserName
         txtTanggal.Text = Date.Now.ToString("dd MMMM yyyy")
         txtAkses.Text = "Akses : " & LoginInformation.UserRole
+        txtRole.ReadOnly = True
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click

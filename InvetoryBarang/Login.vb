@@ -13,6 +13,10 @@
                         MainMenu.Show()
                     Case "Manager"
                         MainMenuDirektur.Show()
+                    Case Else
+                        MessageBox.Show("Username atau password tidak sesuai", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                        Exit Sub
                 End Select
                 clearForm()
                 Me.Hide()
