@@ -85,4 +85,19 @@
         End If
     End Sub
 
+    Private Sub btnLogin_MouseHover(sender As Object, e As EventArgs) Handles btnLogin.MouseHover
+        Cursor = Cursors.Hand
+    End Sub
+
+    Private Sub btnLogin_MouseLeave(sender As Object, e As EventArgs) Handles btnLogin.MouseLeave
+        Cursor = Cursors.Default
+    End Sub
+
+    Private Sub btnExit_MouseHover(sender As Object, e As EventArgs) Handles btnExit.MouseHover
+        Cursor = Cursors.Hand
+    End Sub
+
+    Private Sub btnExit_MouseLeave(sender As Object, e As EventArgs) Handles btnExit.MouseLeave
+        Cursor = Cursors.Default
+    End Sub
 End Class
