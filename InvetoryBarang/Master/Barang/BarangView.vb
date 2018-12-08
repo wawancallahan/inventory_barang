@@ -10,6 +10,7 @@
     End Sub
 
     Protected Sub aturDgv()
+        dgv.Columns.Clear()
         dgv.Columns.Add("Id", "Id")
         dgv.Columns("Id").Visible = False
 

@@ -16,6 +16,7 @@
     End Sub
 
     Protected Sub aturDgv()
+        dgv.Columns.Clear()
         dgv.Columns.Add("Id", "Id")
         dgv.Columns("Id").Visible = False
 
@@ -122,6 +123,8 @@
 
             If updateDB = True And selectedId = LoginInformation.UserId Then
                 query &= "AND NOT username = '" & LoginInformation.UserName & "'"
+            ElseIf updateDB = True And selectedId <> Nothing Then
+                query &= "AND NOT id = '" & selectedId & "'"
             End If
 
             _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
