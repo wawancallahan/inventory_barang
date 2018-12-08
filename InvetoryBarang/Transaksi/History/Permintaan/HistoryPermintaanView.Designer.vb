@@ -31,6 +31,7 @@ Partial Class HistoryPermintaanView
         Me.btnReset = New System.Windows.Forms.Button()
         Me.txtCari = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -120,11 +121,22 @@ Partial Class HistoryPermintaanView
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Cari"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(268, 107)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(142, 28)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Update Status"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'HistoryPermintaanView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(757, 452)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtCari)
         Me.Controls.Add(Me.btnReset)
@@ -152,4 +164,5 @@ Partial Class HistoryPermintaanView
     Friend WithEvents btnReset As System.Windows.Forms.Button
     Friend WithEvents txtCari As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

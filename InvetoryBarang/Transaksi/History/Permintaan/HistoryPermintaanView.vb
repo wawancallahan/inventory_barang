@@ -2,6 +2,9 @@
 
     Dim tanggal As Boolean = False
 
+    Dim selectedId As Boolean = False
+    Dim status As Boolean
+
     Private Sub HistoryPermintaanView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         clearForm()
         aturDgv()
@@ -29,6 +32,8 @@
         dgv.Columns.Add("Tanggal", "Tanggal")
         dgv.Columns.Add("Status", "Status")
         dgv.Columns.Add("Jumlah Barang", "Jumlah Barang")
+        dgv.Columns.Add("status_permintaan", "status_permintaan")
+        dgv.Columns("status_permintaan").Visible = False
     End Sub
 
     Protected Sub getItems(Optional ByVal key As String = Nothing)
@@ -70,7 +75,8 @@
                                   _MySqlDataReader.Item("purchase_orders_no"),
                                   Date.Parse(_MySqlDataReader.Item("purchase_orders_date")).ToString("dd-MMMM-yyyy"),
                                   If(_MySqlDataReader.Item("purchase_orders_status") = 1, "Sesuai", "Belum Sesuai"),
-                                  _MySqlDataReader.Item("purchase_order_details_count")
+                                  _MySqlDataReader.Item("purchase_order_details_count"),
+                                  If(_MySqlDataReader.Item("purchase_orders_status") = 1, True, False)
                                  })
                 End While
             End If
@@ -151,5 +157,43 @@
 
             FormHistory.ShowDialog()
         End With
+    End Sub
+
+    Private Sub dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick
+        If e.RowIndex < 0 Then
+            Exit Sub
+        End If
+
+        With dgv.Rows(e.RowIndex)
+            selectedId = .Cells("Id").Value
+            status = .Cells("status_permintaan").Value
+        End With
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If selectedId = False Then
+            MessageBox.Show("Pilih dahulu data yang ingin diganti statusnya", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Exit Sub
+        End If
+
+        Try
+            Dim query As String = "UPDATE purchase_orders SET status = '" & If(status, 0, 1) & "'"
+            _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
+            _MySqlCommand.ExecuteNonQuery()
+
+            clearForm()
+            getItems()
+
+            If dgv.RowCount > 0 Then
+                dgv.CurrentRow.Selected = False
+            End If
+
+            MessageBox.Show("Status telah terganti", "Pemberitahuan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            selectedId = False
+            status = False
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class
