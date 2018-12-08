@@ -163,10 +163,16 @@
         Dim validateRow As Integer = 0
         Try
             For Each row As DataGridViewRow In dgv.Rows
-                If row.Cells(8).Value <> Nothing And IsNumeric(row.Cells(8).Value) And CInt(row.Cells(8).Value) > 0 Then
-                    validateRow = validateRow + 1
-                ElseIf row.Cells(8).Value <> Nothing And IsNumeric(row.Cells(8).Value) And CInt(row.Cells(8).Value) <= 0 Then
-                    rowHasZeroValue = True
+
+                If row.Cells(8).Value = Nothing Or row.Cells(8).Value = "" Then
+                Else
+                    If row.Cells(8).Value <> Nothing And IsNumeric(row.Cells(8).Value) Then
+                        If CInt(row.Cells(8).Value) >= 0 Then
+                            validateRow = validateRow + 1
+                        Else
+                            rowHasZeroValue = True
+                        End If
+                    End If
                 End If
             Next
         Catch ex As Exception
@@ -174,7 +180,7 @@
         End Try
 
         If rowHasZeroValue Then
-            MessageBox.Show("Qty Datang tidak boleh kurang atau sama dengan nol (0)", "Pemberitahuan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Qty Datang tidak boleh kurang dari nol (0)", "Pemberitahuan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             Return False
         End If
@@ -228,7 +234,11 @@
 
             For Each row As DataGridViewRow In dgv.Rows
 
-                If row.Cells(8).Value = Nothing Or CInt(row.Cells(8).Value) <= 0 Then
+                If row.Cells(8).Value = Nothing Then
+                    Continue For
+                End If
+
+                If CInt(row.Cells(8).Value) <= 0 Then
                     Continue For
                 End If
 
@@ -244,7 +254,7 @@
 
                 _MySqlCommand.ExecuteNonQuery()
 
-                query = "UPDATE purchase_order_details SET qty_complete = '" & row.Cells("Qty Diterima").Value + row.Cells("Qty Datang").Value & "' " & _
+                query = "UPDATE purchase_order_details SET qty_complete = '" & CInt(row.Cells("Qty Diterima").Value) + CInt(row.Cells("Qty Datang").Value) & "' " & _
                         "WHERE id = '" & row.Cells("Id").Value & "'"
 
                 _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)
@@ -266,7 +276,7 @@
 
                 _MySqlDataReader.Close()
 
-                query = "UPDATE stocks SET qty = '" & qty + row.Cells("Qty Datang").Value & "' " & _
+                query = "UPDATE stocks SET qty = '" & qty + CInt(row.Cells("Qty Datang").Value) & "' " & _
                         "WHERE item_id = '" & row.Cells("ItemId").Value & "'"
 
                 _MySqlCommand = New MySql.Data.MySqlClient.MySqlCommand(query, _MySqlConnection)

@@ -9,6 +9,10 @@
         clearForm()
         aturDgv()
         getItems()
+
+        If dgv.RowCount > 0 Then
+            dgv.CurrentRow.Selected = False
+        End If
     End Sub
 
     Protected Sub clearForm()
